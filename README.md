@@ -16,13 +16,13 @@ or
 
 ## Use in python (pyecharts)
 
-1. 将 myTheme.js 放入至 pyecharts-assets/assets/themes 文件夹。
+1. 将 cicc-color.js 放入至 pyecharts-assets/assets/themes 文件夹。
 2. 注册主题到 pyecharts
 ````python
  from pyecharts.datasets import register_files
- register_files({"myTheme": ["themes/myTheme", "js"]})
+ register_files({"cicc-theme": ["themes/cicc-color", "js"]})
 ````
 3. 使用主题
 ````python
- c = Bar(init_opts=opts.InitOpts(theme="myTheme"))
+ c = Bar(init_opts=opts.InitOpts(theme="cicc-theme"))
 ````
