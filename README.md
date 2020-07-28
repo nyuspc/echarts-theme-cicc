@@ -20,11 +20,11 @@ or
 2. 注册主题到 pyecharts
 ````python
  from pyecharts.datasets import register_files
- register_files({"cicc-theme": ["themes/cicc-color", "js"]})
+ register_files({"cicc-color": ["themes/cicc-color", "js"]})
 ````
 3. 使用主题
 ````python
- c = Bar(init_opts=opts.InitOpts(theme="cicc-theme"))
+ c = Bar(init_opts=opts.InitOpts(theme="cicc-color"))
 ````
 
 ## Use in Jupyter Notebook
@@ -56,4 +56,14 @@ pyecharts v1.5.1+ 起开始支持 Notebook 插件作为静态资源服务。
  # 接下来所有图形的静态资源文件都会来自刚启动的服务器
  from pyecharts.charts import Bar
  bar = Bar()
+````
+
+4. 注册主题到 pyecharts
+````python
+ from pyecharts.datasets import register_files
+ register_files({"cicc-color": ["themes/cicc-color", "js"]})
+````
+5. 使用主题
+````python
+ c = Bar(init_opts=opts.InitOpts(theme="cicc-color"))
 ````
