@@ -26,3 +26,34 @@ or
 ````python
  c = Bar(init_opts=opts.InitOpts(theme="cicc-theme"))
 ````
+
+## Use in Jupyter Notebook
+
+pyecharts v1.5.1+ 起开始支持 Notebook 插件作为静态资源服务。
+
+1. 获取 pyecharts-assets 项目
+````shell
+ $ git clone https://github.com/pyecharts/pyecharts-assets.git
+````
+
+2. 安装扩展插件
+
+````shell
+ $ cd pyecharts-assets
+ # 安装并激活插件
+ $ jupyter nbextension install assets
+ $ jupyter nbextension enable assets/main
+````
+3. 配置 pyecharts 全局 HOST
+
+````python
+ # 只需要在顶部声明 CurrentConfig.ONLINE_HOST 即可
+ from pyecharts.globals import CurrentConfig, OnlineHostType
+
+ # OnlineHostType.NOTEBOOK_HOST 默认值为 http://localhost:8888/nbextensions/assets/
+ CurrentConfig.ONLINE_HOST = OnlineHostType.NOTEBOOK_HOST
+
+ # 接下来所有图形的静态资源文件都会来自刚启动的服务器
+ from pyecharts.charts import Bar
+ bar = Bar()
+````
